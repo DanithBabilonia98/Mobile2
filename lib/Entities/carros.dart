@@ -18,7 +18,12 @@ class Carro {
         placa: json["placa"],
       );
 
-  Map<String, dynamic> toJson() {
+  @override
+  String toString() {
+    return 'Carro Color: $color, modelo; $modelo , placa: $placa, marca: $marca';
+  }
+
+  /*Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data["color"] = this.color;
 
@@ -29,5 +34,5 @@ class Carro {
     data["placa"] = this.placa;
 
     return data;
-  }
+  }*/
 }
