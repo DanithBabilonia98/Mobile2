@@ -3,6 +3,7 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/domain/firebase_connection.dart';
 import 'package:flutter_application_2/firebase_options.dart';
+import 'package:flutter_application_2/views/get_firebase.dart';
 import 'package:flutter_application_2/views/listview.dart';
 
 void main() async {
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Material App',
-        home: ListView1());
+        home: GetFireBase());
   }
 }
 
