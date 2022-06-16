@@ -24,7 +24,15 @@ class _MenuState extends State<Menu> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body:
-            Container(alignment: Alignment.center, child: const Text("Home ")));
+      body: Container(
+          alignment: Alignment.center,
+          child: const Text(
+            "Home ",
+            style: TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+                color: Color.fromARGB(255, 50, 152, 203)),
+          )),
+    );
   }
 }
