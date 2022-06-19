@@ -86,13 +86,28 @@ class ListView2 extends StatelessWidget {
           itemCount: games.length,
           physics: const BouncingScrollPhysics(),
           itemBuilder: (_, index) {
-            return ListTile(
-              leading: CircleAvatar(
-                backgroundImage: Image.network(games[index]["image"]!).image,
-              ),
-              title: Text(games[index]["name"]!),
-            );
+            return CardElement(games[0]);
           },
         ));
+  }
+}
+
+class CardElement extends StatelessWidget {
+  const CardElement(Map<String, dynamic> gam, {Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return const Center(
+        child: Card(
+            //elevation: 2,
+            //color: Theme.of(context).colorScheme.surfaceVariant,
+            color: Color.fromARGB(6, 193, 196, 197),
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(20.0))),
+            child: (SizedBox(
+              width: 370,
+              height: 120,
+              child: Center(child: Text("Cards 1.0")),
+            ))));
   }
 }
