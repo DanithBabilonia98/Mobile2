@@ -86,28 +86,64 @@ class ListView2 extends StatelessWidget {
           itemCount: games.length,
           physics: const BouncingScrollPhysics(),
           itemBuilder: (_, index) {
-            return CardElement(games[0]);
+            return CardElement(
+                name: (games[index]["name"]!), image: (games[index]["image"]!));
           },
         ));
   }
 }
 
 class CardElement extends StatelessWidget {
-  const CardElement(Map<String, dynamic> gam, {Key? key}) : super(key: key);
+  final String name;
+  final String image;
+  const CardElement({
+    super.key,
+    required this.name,
+    required this.image,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
+    return Center(
         child: Card(
-            //elevation: 2,
+            elevation: 4,
             //color: Theme.of(context).colorScheme.surfaceVariant,
-            color: Color.fromARGB(6, 193, 196, 197),
-            shape: RoundedRectangleBorder(
+            color: const Color.fromARGB(255, 234, 240, 240),
+            shape: const RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(Radius.circular(20.0))),
-            child: (SizedBox(
-              width: 370,
-              height: 120,
-              child: Center(child: Text("Cards 1.0")),
-            ))));
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Column(children: [
+                  CircleAvatar(
+                    backgroundImage: Image.network(image).image,
+                    maxRadius: 30,
+                  ),
+                ]),
+                Column(children: [
+                  const SizedBox(
+                    width: 80,
+                    child: Text("Name: ",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            color: Color.fromARGB(255, 5, 5, 5),
+                            fontWeight: FontWeight.bold,
+                            fontSize: 14)),
+                  ),
+                  SizedBox(child: Text(name, textAlign: TextAlign.center)),
+                ]),
+                Column(children: const [
+                  SizedBox(
+                    width: 80,
+                    height: 80,
+                    child: Icon(
+                      Icons.arrow_right_alt,
+                      color: Color.fromARGB(255, 177, 190, 197),
+                      size: 40,
+                    ),
+                  )
+                ]),
+              ],
+            )));
   }
 }

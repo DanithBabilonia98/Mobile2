@@ -21,8 +21,6 @@ class _ProfileState extends State<Profile> {
               description:
                   "Podría parecer que no estoy haciendo nada, pero en mi cabeza, estoy muy ocupada. :p",
             ),
-            CardInformacion(title: "Numero Telefonico", description: "4544666"),
-            CardInformacion(title: "otra cosa", description: "no se xd xd"),
           ]),
     );
   }
@@ -160,7 +158,7 @@ class UserPhoto extends StatelessWidget {
                     "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"),
                 fit: BoxFit.cover),
             shape: BoxShape.circle,
-            border: Border.all(color: Colors.white, width: 7)),
+            border: Border.all(color: Colors.white, width: 6)),
         margin: const EdgeInsets.only(bottom: 6),
       ),
       const Text("@Maty98",
